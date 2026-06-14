@@ -1,50 +1,52 @@
 const mongoose = require('mongoose');
+const getDecisionValidationMsgs = require('../utils/getDecisionValidationMsgs');
 
 const decisionSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: [true, 'Title is required'],
+        required: [true, getDecisionValidationMsgs('title', 'required')],
         trim: true,
-        minlength: [3, 'Title must be at least 3 characters']
+        minlength: [3, getDecisionValidationMsgs('title', 'minlength')]
     },
-    title: {
+    assumption: {
         type: String,
-        required: [true, 'Assumption is required'],
+        required: [true, getDecisionValidationMsgs('assumption', 'required')],
         trim: true,
-        minlength: [3, 'Assumption must be at least 3 characters']
+        minlength: [3, getDecisionValidationMsgs('assumption', 'minlength')]
     },
     expectedOutcome: {
         type: String,
-        required: [true, 'Expect Outcome is required'],
+        required: [true, getDecisionValidationMsgs('expectedOutcome', 'required')],
         trim: true,
-        minlength: [3, 'Expect Outcome must be at least 3 characters']
+        minlength: [3, getDecisionValidationMsgs('expectedOutcome', 'minlength')]
     },
     confidence: {
         type: Number,
-        required: [true, 'Confidence is required'],
-        min: [0, 'Confidence must be in between 0-100'],
-        max: [100, 'Confidence must be in between 0-100']
+        required: [true, getDecisionValidationMsgs('confidence', 'required')],
+        min: [0, getDecisionValidationMsgs('confidence', 'min')],
+        max: [100, getDecisionValidationMsgs('confidence', 'max')]
     },
     actualOutcome: {
         type: String,
         trim: true,
-        minlength: [3, 'Actual Outcome must be at least 3 characters']
+        minlength: [3, getDecisionValidationMsgs('actualOutcome', 'minlength')]
     },
     lessonLearnt: {
         type: String,
         trim: true,
-        minlength: [3, 'Lesson you Learnt must be at least 3 characters']
+        minlength: [3, getDecisionValidationMsgs('lessonLearnt', 'minlength')]
     },
     status: {
         type: String,
-        required: true,
+        required: [true, getDecisionValidationMsgs('status', 'required')],
         trim: true,
         enum: {
             values: ['Correct', 'Wrong', 'Pending'],
-            message: 'Status must be Correct or Wrong or Pending'
+            message: getDecisionValidationMsgs('status', 'enum')
         },
         default: 'Pending'
     }
 }, { timestamps: true });
 
-module.exports = mongoose.model("Decision", decisionSchema);
+const Decision = mongoose.model("Decision", decisionSchema);
+module.exports = Decision;

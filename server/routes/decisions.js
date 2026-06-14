@@ -1,8 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const { addDecision } = require('../controllers/decisions');
+const validation = require('../middlewares/validation');
 
-router.get('/add-decision', addDecision);
+const { addDecision } = require('../controllers/decisions');
+const { addDecisionValidation } = require('../validators/decision');
+
+
+router.post('/add-decision', validation(addDecisionValidation), addDecision);
 
 module.exports = { decisionsRouter: router };
