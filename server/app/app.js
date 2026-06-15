@@ -7,6 +7,6 @@ const app = express();
 app.use(express.json());
 
 // routes
-app.use(decisionsRouter);
+app.use('/decisions', decisionsRouter);
 
 module.exports = app;
