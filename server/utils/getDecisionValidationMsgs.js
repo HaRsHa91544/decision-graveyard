@@ -1,4 +1,13 @@
 const getDecisionValidationMsgs = (field, attribute) => {
+    if (field == 'id') {
+        if (attribute === 'required') {
+            return 'Decision Unique ID is required';
+        }
+        else {
+            return '';
+        }
+    }
+
     if (field === 'title') {
         if (attribute === 'required') {
             return 'Title is required';
