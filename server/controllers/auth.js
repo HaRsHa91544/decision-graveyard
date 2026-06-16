@@ -33,10 +33,10 @@ const googleAuth = async (req, res) => {
             { expiresIn: 1000 * 60 * 60 * 24 }
         );
 
-        res.cookie('accessToken', jwtToken, {
+        res.cookie('dg_access', jwtToken, {
             httpOnly: true,
             secure: NODE_ENV === 'production',
-            sameSite: 'strict',
+            sameSite: NODE_ENV === 'production' ? 'none' : 'lax',
             maxAge: 1000 * 60 * 60 * 24 // 1 Day
         });
 
