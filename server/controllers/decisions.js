@@ -31,17 +31,17 @@ const addDecision = async (req, res) => {
 const markOutcome = async (req, res) => {
     try {
         const { id, actualOutcome, lessonLearnt, status } = req.body;
-        
+
         const decision = await Decision.findByIdAndUpdate(id, {
             actualOutcome,
             lessonLearnt,
             status
-        });
+        }, { runValidators: true });
 
         if (!decision) {
             return sendResponse(res, 404, false, 'Decision is not found to update', null);
         }
-        
+
         return sendResponse(res, 200, true, 'Decision outcome is updated successfully!', decision);
     }
     catch (error) {

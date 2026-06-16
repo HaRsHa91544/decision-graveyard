@@ -10,7 +10,7 @@ const validation = (schema) => {
                 res,
                 400,
                 false,
-                'Decision inputs are invalid',
+                'Request is invalid',
                 null,
                 getZodSchemaErrors(result)
             );

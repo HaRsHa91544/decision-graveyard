@@ -21,7 +21,7 @@ const addDecisionValidation = z.object({
     status: z
         .enum(['Correct', 'Wrong', 'Pending'], { error: getDecisionValidationMsgs('status', 'enum') })
         .default('Pending')
-}, { error: 'Invalid inputs' });
+}, { error: 'Request is invalid' });
 
 
 const markOutcomeValidation = z.object({
@@ -37,7 +37,7 @@ const markOutcomeValidation = z.object({
         .min(3, getDecisionValidationMsgs('lessonLearnt', 'minlength')),
     status: z
         .enum(['Correct', 'Wrong'], { error: getDecisionValidationMsgs('status', 'enum') })
-}, { error: 'Invalid inputs' });
+}, { error: 'Request is invalid' });
 
 
 module.exports = { addDecisionValidation, markOutcomeValidation };
