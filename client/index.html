@@ -9,9 +9,18 @@
 
 <body>
     <script>
-        fetch('http://localhost:6900/decisions', {
+        fetch('http://localhost:6900/decisions/', {
             method: 'GET',
-            credentials: 'include'
+            credentials: 'include',
+            // headers: {
+            //     'Content-type': 'application/json'
+            // },
+            // body: JSON.stringify({
+            //     "id": "6a31fa55157b1ae8f9e030ce",
+            //     "actualOutcome": "1 CR in Profits",
+            //     "lessonLearnt": "Update fastly to the market",
+            //     "status": "Correct"
+            // })
         }).then(res => console.log(res.json()));
     </script>
 </body>

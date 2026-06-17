@@ -1,7 +1,14 @@
 const mongoose = require('mongoose');
 const getDecisionValidationMsgs = require('../utils/getDecisionValidationMsgs');
+const getUserValidationMsgs = require('../utils/getUserValidationMsgs');
 
 const decisionSchema = new mongoose.Schema({
+    userId: {
+        type: String,
+        required: [true, getUserValidationMsgs('userId', 'required')],
+        trim: true,
+        unique: true
+    },
     title: {
         type: String,
         required: [true, getDecisionValidationMsgs('title', 'required')],
