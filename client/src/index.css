@@ -1,0 +1,11 @@
+:root {
+    --background: #0F1115;
+    --surface: #1A1D24;
+    --card: #242833;
+    --text-primary: #E5E7EB;
+    --text-secondary: #9CA3AF;
+    --accent: #8B6F47;
+    --success: #5C8A5C;
+    --failure: #A65A5A;
+    --border: #343A46;
+}

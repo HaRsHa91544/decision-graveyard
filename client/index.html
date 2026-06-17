@@ -1,28 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>client</title>
 </head>
 
 <body>
-    <script>
-        fetch('http://localhost:6900/decisions/mark-outcome', {
-            method: 'PATCH',
-            credentials: 'include',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({
-                "id": "6a31fa55157b1ae8f9e030ce",
-                "actualOutcome": "1 CR in Profits",
-                "lessonLearnt": "Update fastly to the market",
-                "status": "Correct"
-            })
-        }).then(res => console.log(res.json()));
-    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>

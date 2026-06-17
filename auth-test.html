@@ -6,7 +6,6 @@
 
     <script>
         function decodeJWT(token) {
-
             let base64Url = token.split(".")[1];
             let base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
             let jsonPayload = decodeURIComponent(
@@ -21,7 +20,6 @@
         }
 
         function handleCredentialResponse(response) {
-
             console.log("Encoded JWT ID token: " + response.credential);
 
             const responsePayload = decodeJWT(response.credential);
