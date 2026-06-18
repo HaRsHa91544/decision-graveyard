@@ -4,8 +4,46 @@
     --card: #242833;
     --text-primary: #E5E7EB;
     --text-secondary: #9CA3AF;
-    --accent: #8B6F47;
-    --success: #5C8A5C;
-    --failure: #A65A5A;
+    --accent: #e8ae5c;
+    --success: #279027;
+    --failure: #b53535;
+    --failure-dark: #6a0404;
     --border: #343A46;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'cinzel';
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+html {
+    scrollbar-color: var(--background) var(--text-primary);
+    scrollbar-width: thin;
+}
+
+body {
+    background: linear-gradient(135deg, var(--background) 50%, var(--surface));
+}
+
+#root {
+    position: relative;
+}
+
+button {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--text-primary);
 }

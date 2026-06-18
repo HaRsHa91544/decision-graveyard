@@ -1,0 +1,58 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--background);
+    padding: 0.5rem 2rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dg-logo {
+    width: 72px;
+    height: 72px;
+}
+
+.dg-logo-text {
+    font-size: 2rem;
+    color: var(--accent);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-list-item {
+    font-size: 1.1rem;
+    font-family: 'cinzel';
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.logout-btn {
+    font-size: 1.1rem;
+    font-family: 'cinzel';
+    font-weight: 600;
+    background: var(--failure);
+    color: var(--text-primary);
+}
+
+.logout-btn:hover,
+.logout-btn:active {
+    background: var(--failure-dark);
+}
