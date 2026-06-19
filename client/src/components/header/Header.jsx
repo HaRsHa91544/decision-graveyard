@@ -2,7 +2,7 @@ import './header.css';
 function Header() {
     return <header>
         <div className="logo-container">
-            <img className="dg-logo" src="../../public/logo.png" alt="decision-graveyard-logo" />
+            <img className="dg-logo" src="/logo.png" alt="decision-graveyard-logo" />
             <h1 className='dg-logo-text'>Decision Graveyard</h1>
         </div>
         <nav>
