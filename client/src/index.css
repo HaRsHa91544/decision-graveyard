@@ -6,9 +6,9 @@
     --text-secondary: #9CA3AF;
     --accent: #e8ae5c;
     --success: #279027;
-    --failure: #b53535;
+    --failure: #ff7575;
     --failure-dark: #6a0404;
-    --border: #343A46;
+    --border: #757779;
 }
 
 * {
