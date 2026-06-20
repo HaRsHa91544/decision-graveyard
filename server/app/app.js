@@ -14,9 +14,11 @@ const { decisionsRouter } = require('../routes/decisions');
 
 const app = express();
 
+const { CLIENT_URL } = process.env;
+
 
 // middlewares
-app.use(cors({ origin: 'http://localhost:5500', credentials: true }));
+app.use(cors({ origin: CLIENT_URL, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan('dev'));
