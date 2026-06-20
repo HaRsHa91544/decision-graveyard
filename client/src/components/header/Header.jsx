@@ -1,15 +1,22 @@
 import { NavLink } from 'react-router';
 import './header.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useContext } from 'react';
+import { UserContext } from '../../context/userContext';
 
 function Header() {
-    const [user, setUserState] = useState();
 
     const userData = JSON.parse(localStorage.getItem('userData'));
+
+    const { user, setUserState } = useContext(UserContext);
 
     useEffect(() => {
         setUserState(userData);
     }, []);
+
+    const handleLogout = () => {
+        localStorage.removeItem('userData');
+        setUserState(null);
+    };
 
     return <header>
         <div className="logo-container">
@@ -33,7 +40,7 @@ function Header() {
                             <NavLink className="nav-link" to={'/decisions'}>Decisions</NavLink>
                         </li>
                     </ul>
-                    <button className="profile-logout-btn">
+                    <button className="profile-logout-btn" onClick={handleLogout}>
                         <div className="profile-img-container">
                             <img src={user.profileURL} alt="profile-img" className="profile-img" />
                         </div>
@@ -42,7 +49,6 @@ function Header() {
                 </>
             }
         </nav>
-
     </header>;
 }
 
