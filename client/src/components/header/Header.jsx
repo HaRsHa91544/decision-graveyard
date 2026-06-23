@@ -32,6 +32,7 @@ function Header() {
                 user
                 &&
                 <>
+                    {console.log('req sent')}
                     <ul className="nav-list">
                         <li className="nav-list-item">
                             <NavLink className="nav-link" to={'/home'}>Home</NavLink>
